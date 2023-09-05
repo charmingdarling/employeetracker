@@ -1,0 +1,23 @@
+{
+  "name": "employeetracker",
+  "version": "1.0.0",
+  "description": "Creating an interface that lets non-developers easily view and interact with information stored in a database also known as a Content Managemetn System (CMS). This is a command-line application to help manage a company's employee database using Node.js, Inquirier, and MySQL.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charmingdarling/employeetracker.git"
+  },
+  "author": "Kim Nguyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/charmingdarling/employeetracker/issues"
+  },
+  "homepage": "https://github.com/charmingdarling/employeetracker#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
+}
