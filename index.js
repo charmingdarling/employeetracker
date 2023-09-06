@@ -1,6 +1,8 @@
 // Requiring these Node Package Manager Modules
 const inquirer = require("inquirer");
 const mysql = require("mysql2");
+const { printTable } = require("console-table-printer");
+const figlet = require("figlet");
 
 // Importing Scripts
 const questions = require("./lib/questions");
