@@ -6,7 +6,7 @@ VALUES  ("Neonatal ICU"),
         ("Management");
 
 INSERT INTO
-    role (title, hourly, department_id)
+    roles (title, hourly, department_id)
 VALUES  ("Clinical Nurse II", 85, 3), 
         ("Clinical Nurse III", 100, 1), 
         ("Clinical Nurse IV", 115, 1), 

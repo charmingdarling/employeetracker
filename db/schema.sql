@@ -11,7 +11,7 @@ CREATE TABLE
     );
 
 CREATE TABLE
-    role (
+    roles (
         id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
         title VARCHAR(30) NOT NULL,
         hourly DECIMAL NOT NULL,
@@ -25,8 +25,8 @@ CREATE TABLE
         id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
         firstName VARCHAR(30) NOT NULL,
         lastName VARCHAR(40) NOT NULL,
-        role_id INT,
+        roles_id INT,
         manager_id INT,
-        FOREIGN KEY (role_id) REFERENCES role(id) ON DELETE SET NULL,
+        FOREIGN KEY (roles_id) REFERENCES roles(id) ON DELETE SET NULL,
         FOREIGN KEY (manager_id) REFERENCES employees(id) ON DELETE SET NULL
     );
