@@ -25,7 +25,7 @@ db.query("SELECT * FROM nurse_db", function (err, results) {
 });
 
 // Figment to print out terminal "Employee Tracker" text
-figlet("Neonatal Nurse Employee Tracker!!", function (err, data) {
+figlet(` \n Nurse Tracker `, function (err, data) {
   if (err) {
     console.log("Something went wrong... Try something else.");
     console.dir(err);
