@@ -1,4 +1,4 @@
-// Requiring these Node Package Manager Modules
+// Packages needed for this app
 const inquirer = require("inquirer");
 const mysql = require("mysql2");
 const cTable = require("console.table");

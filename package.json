@@ -2,10 +2,10 @@
   "name": "employeetracker",
   "version": "1.0.0",
   "description": "Creating an interface that lets non-developers easily view and interact with information stored in a database also known as a Content Managemetn System (CMS). This is a command-line application to help manage a company's employee database using Node.js, Inquirier, and MySQL.",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
