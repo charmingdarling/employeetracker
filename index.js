@@ -8,41 +8,34 @@ const figlet = require("figlet");
 const questions = require("./lib/questions");
 const menu = require("./lib/menu");
 
-// Connect to database
-//!^---create separate file in db, configuration)
+// Connect to database, db is in a separate file 'nurses_db'
 const db = mysql.createConnection(
   {
-    host: "localhost", // MySQL username
-    user: "root", // MySQL password
-    password: "root",
+    host: "localhost",
+    user: "root", // MySQL username
+    password: "root", // MySQL password
     database: "nurses_db", // Connecting to nurse database
   },
   console.log(`Connected to the nurses_db database.`)
 );
 
-// Query database
-db.query("SELECT * FROM employees", function (err, results) {
+// Query whole database
+db.query("SELECT * FROM nurse_db", function (err, results) {
   console.log(results);
 });
 
-// Figment to print out Employee
+// Figment to print out terminal "Employee Tracker" text
 figlet("Neonatal Nurse Employee Tracker!!", function (err, data) {
   if (err) {
-    console.log("Something went wrong...");
+    console.log("Something went wrong... Try something else.");
     console.dir(err);
     return;
   }
   console.log(data);
 });
 
-//! questions prompted in new file
-
-// async function doSomething(){
-//   let response = await fetch(url);
-//   return response
-// }
-
-// Function to start menu.js. Imported/required const above.
+// Function to start menu.js. Menu.js has questions prompt for user.
+//Imported/required const above.
 function init() {
   menu();
 }
