@@ -10,7 +10,8 @@ CREATE TABLE
         name VARCHAR(30) NOT NULL
     );
 
-roles (
+CREATE TABLE
+    roles (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(30) NOT NULL,
     hourly DECIMAL NOT NULL,

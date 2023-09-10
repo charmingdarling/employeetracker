@@ -21,18 +21,6 @@ db.connect((err) => {
   } else {
     console.log(`Connected to the nurses_db database.`);
   }
-
-  // Figlet to print out terminal "Employee Tracker" text
-  figlet(` \n Nurse Tracker `, function (err, data) {
-    if (err) {
-      console.log("Something went wrong... Try something else.");
-      console.dir(err);
-      return;
-    }
-    console.log(data);
-    // Call menu(); after Figlet displayed.
-    init();
-  });
 });
 
 //? The part below was in the activities/mini challenge, so does it do anything?
@@ -43,11 +31,22 @@ db.connect((err) => {
 //? });
 
 // Function to start menu.js. File prompts user with questions.
+function printBanner() {
+  // Figlet to print out terminal "Employee Tracker" text
+  figlet(` \n Nurse Tracker `, function (err, data) {
+    if (err) {
+      console.log("Something went wrong... Try something else.");
+      console.dir(err);
+      return;
+    }
+    console.log(data);
+  });
+}
 
 function init() {
+  printBanner();
   menu();
 }
 
 // Function to initialize
-// Passing the 'db' object as an argument to the menu function
-init(db);
+init();
