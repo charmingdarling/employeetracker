@@ -12,12 +12,12 @@ CREATE TABLE
 
 CREATE TABLE
     roles (
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    title VARCHAR(30) NOT NULL,
-    hourly DECIMAL NOT NULL,
-    department_id INT,
-    FOREIGN KEY (department_id) REFERENCES neonatal_departments (id) ON DELETE SET NULL
-);
+        id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        title VARCHAR(30) NOT NULL,
+        hourly DECIMAL NOT NULL,
+        department_id INT,
+        FOREIGN KEY (department_id) REFERENCES neonatal_departments (id) ON DELETE SET NULL
+    );
 
 CREATE TABLE
     employees (

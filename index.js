@@ -1,13 +1,16 @@
-// Packages and Scripts needed for this app
+// Packages needed for this app
+
 const figlet = require("figlet");
+
+// Importing Scripts
 const menu = require("./lib/menu");
 
-// Function to start menu.js.
+// Function to start menu.js. File prompts user with questions.
 // Need async for printBanner();
 async function printBanner() {
   console.log("Nurse Tracker should be printed");
   try {
-    const result = await figletAsync("Nurse Tracker"); // Need await
+    const result = await figletAsync("Nurse Tracker"); //Need await
     console.log(result);
   } catch (err) {
     console.log("Something went wrong...");
@@ -27,9 +30,8 @@ function figletAsync(text) {
   });
 }
 
-// Need function init() to be async so that await printBanner works.
 async function init() {
-  await printBanner();
+  await printBanner(); // Need function init() to be async so that await printBanner works.
   menu();
 }
 
