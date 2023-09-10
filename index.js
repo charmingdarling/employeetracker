@@ -23,13 +23,6 @@ db.connect((err) => {
   }
 });
 
-//? The part below was in the activities/mini challenge, so does it do anything?
-
-//? Query whole database
-//? db.query("SELECT * FROM nurse_db", function (err, results) {
-//?   console.log(results);
-//? });
-
 // Function to start menu.js. File prompts user with questions.
 // Need async for printBanner();
 async function printBanner() {
