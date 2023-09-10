@@ -7,8 +7,11 @@ const figlet = require("figlet");
 // Importing Scripts
 const questions = require("./lib/questions");
 const menu = require("./lib/menu");
+// require("dotenv").config();
+// const menupractice = require("./lib/menupractice");
 
 // Connect to database, db is in a separate file 'nurses_db'
+// Conect to .env file
 const db = mysql.createConnection(
   {
     host: "localhost",
@@ -37,6 +40,7 @@ figlet(` \n Nurse Tracker `, function (err, data) {
 // Function to start menu.js. Menu.js has questions prompt for user.
 //Imported/required const above.
 function init() {
+  // menupractice();
   menu();
 }
 
