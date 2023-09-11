@@ -49,13 +49,27 @@ ORDER BY
   Manager_Name;
 
 -- ? Add Department
--- TODO: Add Department > Prompted to enter name of department and that department is added to database
+-- TODO: Add Department
+-- TODO: > Prompted to enter name of department...
+-- TODO: > and that department is added to database
 INSERT INTO
   neonatal_departments (name)
 VALUES
   ('New Department');
 
--- TODO: Add Role > Prompted to enter name, salary, and department for that role > Role is added to database
+-- * Unsure if I need a placeholder in here in values or not. How do I add the user input?
+-- TODO: Add Role
+-- TODO: > Prompted to enter name, salary, and department for added role...
+-- TODO: > role is added to database
+--
+-- ? Add Role
+-- * I am running into a COLUMN COUNT ERROR below
+INSERT INTO
+  roles (id, title, hourly, department_id)
+VALUES
+  ('New Role');
+
+-- * Unsure if I need a placeholder in here in values or not. How do I add the user input?
 -- TODO: Add Employee > Prompted to enter the employee's first name, last name, role, and manager > Employee added to database
 -- TODO: Update Employee > Prompted to select an employee to update, their new role, and this information is updated into database
 -- <Break>
