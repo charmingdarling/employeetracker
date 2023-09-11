@@ -1,21 +1,31 @@
 -- !View All Employees
 -- TODO: Try and figure out if you can replace manager_id with employee name
 -- TODO: SUBQUERIES. (NESTED SELECT)
+-- TODO: Change Tables to singular not plural
+--Hellfire's Query
 SELECT
-  employees.id,
-  CONCAT (employees.firstName, " ", employees.lastName) AS Employee,
-  roles.hourly AS Hourly,
-  CONCAT (employees.manager_id) AS Manager_Name -- INNER SELECT
+  e.id,
+  e.firstName,
+  e.lastName,
+  r.title,
+  d.name,
+  r.hourly,
+  (
+    SELECT
+      CONCAT (m.firstName, ' ', m.lastName)
+    FROM
+      employees m
+    WHERE
+      m.id = e.manager_id
+  ) as manager
 FROM
   employees e
-  RIGHT JOIN roles ON employees.manager_id = employees.manager_id
-GROUP BY
-  employees.id,
-  employees.firstName,
-  employees.lastName,
-  manager_id,
-  roles.hourly;
+  JOIN roles r ON e.role_id = r.id
+  JOIN neonatal_departments d ON r.department_id = d.id;
 
+-- WHERE
+--   e.role_id = r.id
+--   AND r.department_id = d.id;
 -- !Employee Full Name, Title, Manager Name
 -- I've used e as an alias for the employees table representing employees.
 -- I've used m as an alias for the employees table representing managers.
@@ -27,7 +37,7 @@ FROM
   employees e
   LEFT JOIN roles r ON e.role_id = r.id
   LEFT JOIN employees m ON e.manager_id = m.id
-GROUP BY
+ORDER BY
   e.firstName,
   e.lastName,
   r.title,
