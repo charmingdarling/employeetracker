@@ -1,5 +1,5 @@
 -- TODO: Change tables to singular not plural
--- ? View All Employees
+-- ? View All Employees: viewEmployees()
 SELECT
   e.id,
   e.firstName,
