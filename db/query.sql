@@ -1,8 +1,5 @@
+-- TODO: Change tables to singular not plural
 -- !View All Employees
--- TODO: Try and figure out if you can replace manager_id with employee name
--- TODO: SUBQUERIES. (NESTED SELECT)
--- TODO: Change Tables to singular not plural
---Hellfire's Query
 SELECT
   e.id,
   e.firstName,
@@ -23,10 +20,18 @@ FROM
   JOIN roles r ON e.role_id = r.id
   JOIN neonatal_departments d ON r.department_id = d.id;
 
--- WHERE
---   e.role_id = r.id
---   AND r.department_id = d.id;
--- !Employee Full Name, Title, Manager Name
+-- ! View All Roles -- 
+SELECT
+  title AS Title,
+  r.id AS ID,
+  d.name AS Department,
+  hourly AS Hourly
+FROM
+  roles r
+  JOIN employees e ON r.hourly = r.hourly
+  JOIN neonatal_departments d ON r.department_id = d.id;
+
+--!Employee Full Name, Title, Manager Name
 -- I've used e as an alias for the employees table representing employees.
 -- I've used m as an alias for the employees table representing managers.
 SELECT
