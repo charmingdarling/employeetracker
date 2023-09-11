@@ -48,7 +48,13 @@ ORDER BY
   r.title,
   Manager_Name;
 
+-- ? Add Department
 -- TODO: Add Department > Prompted to enter name of department and that department is added to database
+INSERT INTO
+  neonatal_departments (name)
+VALUES
+  ('New Department');
+
 -- TODO: Add Role > Prompted to enter name, salary, and department for that role > Role is added to database
 -- TODO: Add Employee > Prompted to enter the employee's first name, last name, role, and manager > Employee added to database
 -- TODO: Update Employee > Prompted to select an employee to update, their new role, and this information is updated into database
