@@ -1,8 +1,5 @@
-// Packages needed for this app
-
+// Packages and Scripts needed for this app
 const figlet = require("figlet");
-
-// Importing Scripts
 const menu = require("./lib/menu");
 
 // Function to start menu.js. File prompts user with questions.

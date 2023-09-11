@@ -1,26 +1,22 @@
---This table on line 2 is useless, TBH
+-- !View All Employees
+-- TODO: Try and figure out if you can replace manager_id with employee name
+-- TODO: SUBQUERIES. (NESTED SELECT)
 SELECT
-  roles.id,
-  roles.title,
-  neonatal_departments.name AS Neonatal_Department
+  employees.id,
+  CONCAT (employees.firstName, " ", employees.lastName) AS Employee,
+  roles.hourly AS Hourly,
+  CONCAT (employees.manager_id) AS Manager_Name -- INNER SELECT
 FROM
-  roles
-  LEFT JOIN neonatal_departments ON roles.department_id = neonatal_departments.id;
-
--- Budget
-SELECT
-  neonatal_departments.id,
-  neonatal_departments.name,
-  SUM(roles.hourly) AS Shift_Budget
-FROM
-  employees
-  LEFT JOIN roles ON employees.role_id = roles.id
-  LEFT JOIN neonatal_departments ON roles.department_id = neonatal_departments.id
+  employees e
+  RIGHT JOIN roles ON employees.manager_id = employees.manager_id
 GROUP BY
-  neonatal_departments.id,
-  neonatal_departments.name;
+  employees.id,
+  employees.firstName,
+  employees.lastName,
+  manager_id,
+  roles.hourly;
 
--- Employee Full Name, Title, Manager Name
+-- !Employee Full Name, Title, Manager Name
 -- I've used e as an alias for the employees table representing employees.
 -- I've used m as an alias for the employees table representing managers.
 SELECT
@@ -43,3 +39,15 @@ GROUP BY
 -- Employee table > join left > role > join left department (role belongs to) > join left employee with manager_id
 -- concat(manager.firstName, " ", manager.LastName) AS manager (to rename for better reading)
 --
+-- !Budget
+SELECT
+  neonatal_departments.id,
+  neonatal_departments.name,
+  SUM(roles.hourly) AS Shift_Budget
+FROM
+  employees
+  LEFT JOIN roles ON employees.role_id = roles.id
+  LEFT JOIN neonatal_departments ON roles.department_id = neonatal_departments.id
+GROUP BY
+  neonatal_departments.id,
+  neonatal_departments.name;
