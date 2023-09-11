@@ -27,8 +27,9 @@ function figletAsync(text) {
   });
 }
 
+// Need function init() to be async so that await printBanner works.
 async function init() {
-  await printBanner(); // Need function init() to be async so that await printBanner works.
+  await printBanner();
   menu();
 }
 
