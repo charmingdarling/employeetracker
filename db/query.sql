@@ -1,7 +1,4 @@
 -- TODO: Change tables to singular not plural
--- TODO: Look at the FOREIGN KEYS each employee is assigned to every role
--- TODO: Somehow, I am iterating over EVERY employee x role. 14 x 16 = 224 (-1 since index); WTF
--- TODO: cartesian table issue? SOMETHING WRONG WITH SELECT
 -- ? View All Employees: viewEmployees()
 SELECT
   e.id,
@@ -20,9 +17,10 @@ SELECT
   ) as manager
 FROM
   employees e
-  JOIN roles r ON e.role_id = r.id
   JOIN neonatal_departments d ON r.department_id = d.id;
 
+-- JOIN roles r ON e.role_id = r.id
+-- "Removed JOIN employees e on r hourly = r.hourly from viewRolesNow(). It was causing a huge error where it printed out 14 x 16 = 224 rows."
 -- ? View All Roles -- 
 SELECT
   title AS Title,
