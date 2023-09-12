@@ -43,12 +43,3 @@ VALUES
     ("Ashley", "Gremillion", 14, 2),
     ("Jessica", "Kim", 15, 4),
     ("Ysabel", "Anton", 16, 2);
-
--- Created a managers table, because this will let me access their first and last names easier
-INSERT INTO
-    managers (firstName, lastname)
-VALUES
-    ("Florence", "Nightingale"),
-    ("Grace", "Nelson"),
-    ("Sergio", "Vidales-Perez"),
-    ("Susan", "Wheeler",);
