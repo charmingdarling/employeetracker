@@ -1,6 +1,7 @@
 -- TODO: Change tables to singular not plural
 -- TODO: Look at the FOREIGN KEYS each employee is assigned to every role
 -- TODO: Somehow, I am iterating over EVERY employee x role. 14 x 16 = 224 (-1 since index); WTF
+-- TODO: cartesian table issue? SOMETHING WRONG WITH SELECT
 -- ? View All Employees: viewEmployees()
 SELECT
   e.id,
