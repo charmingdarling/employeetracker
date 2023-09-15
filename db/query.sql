@@ -51,21 +51,14 @@ ORDER BY
   Manager_Name;
 
 -- ? Add Department
--- TODO: Add Department
--- TODO: > Prompted to enter name of department...
--- TODO: > and that department is added to database
 --! The department that is added doesn't AUTO_INCREMENT it's ID number. It's null.
 INSERT INTO
   neonatal_departments (name)
 VALUES
   ('New Department');
 
--- TODO: Add Role
--- TODO: > Prompted to enter name, salary, and department for added role...
--- TODO: > role is added to database
 --
 -- ? Add Role --
--- TODO restructure query of add role to use neonatal_departments?
 SELECT
   title AS Title,
   hourly AS Hourly,
@@ -77,20 +70,10 @@ ALTER TABLE neonatal_departments MODIFY COLUMN id INT AUTO_INCREMENT;
 
 --
 --
--- ? Add Role OG, but issues?
-INSERT INTO
-  roles (id, title, hourly, department_id)
-VALUES
-  (?, ?, ?, ?);
+-- ? Add Employee
+SELECT 
 
--- * Unsure if I need a placeholder in here in values or not. How do I add the user input?
--- TODO: Add Employee > Prompted to enter the employee's first name, last name, role, and manager > Employee added to database
--- TODO: Update Employee > Prompted to select an employee to update, their new role, and this information is updated into database
--- <Break>
--- Find all employees, bring in the departments that the employee belongs to and brought in the manager ADD
--- Employee table > join left > role > join left department (role belongs to) > join left employee with manager_id
--- concat(manager.firstName, " ", manager.LastName) AS manager (to rename for better reading)
---
+
 -- ? Budget
 SELECT
   neonatal_departments.id,
