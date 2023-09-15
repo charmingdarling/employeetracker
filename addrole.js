@@ -58,7 +58,7 @@ const addRole = () => {
               departmentId = department.id;
             }
           });
-          let sql = `INSERT INTO role (title, salary, department_id) VALUES (?, ?, ?)`;
+          let sql = `INSERT INTO roles (title, salary, department_id) VALUES (?, ?, ?)`;
           let crit = [createdRole, answer.salary, departmentId];
 
           connection.query(sql, crit, (error) => {
