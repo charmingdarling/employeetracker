@@ -17,6 +17,7 @@ SELECT
   ) as manager
 FROM
   employees e
+  JOIN roles r ON e.role_id = r.id
   JOIN neonatal_departments d ON r.department_id = d.id;
 
 -- JOIN roles r ON e.role_id = r.id
@@ -53,22 +54,34 @@ ORDER BY
 -- TODO: Add Department
 -- TODO: > Prompted to enter name of department...
 -- TODO: > and that department is added to database
+--! The department that is added doesn't AUTO_INCREMENT it's ID number. It's null.
 INSERT INTO
   neonatal_departments (name)
 VALUES
   ('New Department');
 
--- * Unsure if I need a placeholder in here in values or not. How do I add the user input?
 -- TODO: Add Role
 -- TODO: > Prompted to enter name, salary, and department for added role...
 -- TODO: > role is added to database
 --
--- ? Add Role
--- * I am running into a COLUMN COUNT ERROR below
+-- ? Add Role --
+-- TODO restructure query of add role to use neonatal_departments?
+SELECT
+  title AS Title,
+  hourly AS Hourly,
+  department_id AS Department
+FROM
+  roles r
+  LEFT JOIN neonatal_departments ON r.department_id = neonatal_departments.name
+ALTER TABLE neonatal_departments MODIFY COLUMN id INT AUTO_INCREMENT;
+
+--
+--
+-- ? Add Role OG, but issues?
 INSERT INTO
   roles (id, title, hourly, department_id)
 VALUES
-  ('New Role');
+  (?, ?, ?, ?);
 
 -- * Unsure if I need a placeholder in here in values or not. How do I add the user input?
 -- TODO: Add Employee > Prompted to enter the employee's first name, last name, role, and manager > Employee added to database
