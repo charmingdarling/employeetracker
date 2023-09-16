@@ -9,6 +9,7 @@ VALUES
 INSERT INTO
     roles (title, hourly, department_id)
 VALUES
+    -- ("Manager", 120, )
     ("Clinical Nurse II", 90, 1),
     ("Clinical Nurse III", 100, 1),
     ("Clinical Nurse IV", 115, 1),

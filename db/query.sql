@@ -71,9 +71,18 @@ ALTER TABLE neonatal_departments MODIFY COLUMN id INT AUTO_INCREMENT;
 --
 --
 -- ? Add Employee
-SELECT 
+-- * IDKWTF I AM DOING HERE // roles/managers
+SELECT
+  id,
+  title
+FROM
+  roles;
 
-
+--*** passing the id (number) to user not title
+--
+--
+--
+--
 -- ? Budget
 SELECT
   neonatal_departments.id,
