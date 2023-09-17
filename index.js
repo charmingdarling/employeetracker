@@ -1,6 +1,7 @@
 // Packages and Scripts needed for this app
 const figlet = require("figlet");
 const menu = require("./lib/menu");
+const { AskDatabase } = require("./config/database");
 
 // Function to start menu.js. File prompts user with questions.
 // Need async for printBanner();
@@ -29,8 +30,15 @@ function figletAsync(text) {
 
 // Need function init() to be async so that await printBanner works.
 async function init() {
-  await printBanner();
-  menu();
+  try {
+    const db = new AskDatabase();
+    db.createConnection();
+    await printBanner();
+    menu();
+  } catch (err) {
+  } finally {
+    // db.closeConnection();
+  }
 }
 
 // Function to initialize
