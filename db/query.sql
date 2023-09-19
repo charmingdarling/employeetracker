@@ -103,3 +103,7 @@ FROM
   employees e
 WHERE
   manager_id IS NULL;
+
+-- Adding to Employee Table 
+INSERT INTO
+  employees e
