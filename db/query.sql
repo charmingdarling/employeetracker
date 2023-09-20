@@ -95,3 +95,15 @@ FROM
 GROUP BY
   neonatal_departments.id,
   neonatal_departments.name;
+
+--? View All Managers -
+SELECT
+  CONCAT (e.firstName, ' ', e.lastName) AS Manager_Name
+FROM
+  employees e
+WHERE
+  manager_id IS NULL;
+
+-- Adding to Employee Table 
+INSERT INTO
+  employees e
