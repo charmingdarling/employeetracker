@@ -32,9 +32,9 @@ Double check to make sure that the MySQL database is connected and execute the s
 
 ## Screenshots
 
-[Header](/nursetrackermenu.png)
+![Header](/nursetrackermenu.png)
 
-[Console.Table](/viewdepartmentsrolesemployees.png)
+![Console.Table](/viewdepartmentsrolesemployees.png)
 
 
 ## Link
